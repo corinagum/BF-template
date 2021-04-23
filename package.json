@@ -1,4 +1,22 @@
 {
+  "name": "bf-template",
+  "version": "1.0.0",
+  "description": "Bot Framework Template",
+  "author": "corinagum",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "eslint": "eslint src/**/*.js src/**/*.ts --fix",
+    "postinstall": "npm run build && node ./deploymentScripts/webConfigPrep.js",
+    "start": "tsc --build && node ./lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon --watch ./src -e ts --exec \"npm run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com"
+  },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/restify": "^8.5.1",
