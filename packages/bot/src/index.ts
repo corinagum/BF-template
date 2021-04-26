@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as restify from 'restify';
 import { EchoBot } from './bot';
 
-const ENV_FILE = path.join(__dirname, '..', '.env');
+const ENV_FILE = path.join(__dirname, '../..', '.env');
 config({ path: ENV_FILE });
 
 /* HTTP Server */
