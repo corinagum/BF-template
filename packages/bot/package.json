@@ -22,6 +22,8 @@
     "@types/restify": "^8.5.1",
     "botbuilder": "^4.13.0",
     "dotenv": "^8.2.0",
+    "math-random": "^2.0.1",
+    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7",
     "restify": "^8.5.1"
   },

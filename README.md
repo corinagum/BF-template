@@ -17,10 +17,12 @@ Here's another iteration of a [TypeScript basic bot](https://github.com/microsof
    You can add and update the following variables:
    ```
    SERVER_NAME=BF-template-bot # Optional
-
    MICROSOFT_APP_ID=
    MICROSOFT_APP_PASSWORD=
    ```
+
+1. Update `trustedOrigins.js`
+
 1. Install modules in `bot` and `token-server`
 
     ```bash
