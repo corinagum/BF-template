@@ -21,13 +21,14 @@ Here's another iteration of a [TypeScript basic bot](https://github.com/microsof
    MICROSOFT_APP_ID=
    MICROSOFT_APP_PASSWORD=
    ```
-1. Install modules
+1. Install modules in `bot` and `token-server`
 
     ```bash
+    cd packages/<bot>|<token-server>
     yarn install
     ```
 
-1. Start the bot
+1. Start the bot and token server
 
     ```bash
     yarn start
