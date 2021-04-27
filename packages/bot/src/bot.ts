@@ -1,5 +1,9 @@
 import { ActivityHandler, MessageFactory, TurnContext } from 'botbuilder';
 
+/*
+* CREATE EchoBot ActivityHandler:
+* - https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/activityhandler?view=botbuilder-ts-latest
+*/
 export class EchoBot extends ActivityHandler {
   constructor() {
     super();
