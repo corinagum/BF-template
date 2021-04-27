@@ -1,0 +1,12 @@
+{
+  "name": "token-server",
+  "version": "1.0.0",
+  "description": "Token Server for BF-template",
+  "main": "index.js",
+  "repository": "https://github.com/corinagum/BF-template",
+  "author": "corinagum",
+  "license": "MIT",
+  "dependencies": {
+    "math-random": "^2.0.1"
+  }
+}
