@@ -4,7 +4,6 @@ import * as path from 'path';
 import * as restify from 'restify';
 import { TemplateBot } from './TemplateBot';
 
-
 /*
 * CONFIGURE ENV
 * - Add BOT_PORT=3978 if not specified in root .env
@@ -29,7 +28,7 @@ server.listen(BOT_PORT, () => {
   console.log(`\n ${BOT_NAME} server listening to ${server.url}`);
 });
 
-/* CREATE BOTFRAMEWORKaDAPTER
+/* CREATE BOTFRAMEWORKADAPTER
 * https://aka.ms/about-bot-adapter
 */
 const adapter = new BotFrameworkAdapter({
@@ -37,12 +36,12 @@ const adapter = new BotFrameworkAdapter({
   appPassword: MICROSOFT_APP_PASSWORD
 });
 
-/* Error handling */
+/* ERROR HANDLING */
 const onTurnErrorHandler = async (context: TurnContext, error: Error) => {
   console.error(`\n ${BOT_NAME}: [onTurnError] unhandled error: ${error}`);
 
-  /* Send trace activity to display errors in Emulator (locally running bot)
-    https://docs.microsoft.com/en-us/azure/bot-service/using-trace-activities?view=azure-bot-service-4.0&tabs=javascript
+  /* Trace Activity for BotFramework Emulator:
+  * https://docs.microsoft.com/en-us/azure/bot-service/using-trace-activities?view=azure-bot-service-4.0&tabs=javascript
   */
   await context.sendTraceActivity(
     'OnTurnError Trace',
@@ -58,10 +57,11 @@ const onTurnErrorHandler = async (context: TurnContext, error: Error) => {
 
 adapter.onTurnError = onTurnErrorHandler;
 
-const echoBot = new TemplateBot();
+/* INITIALIZE EVENT EMISSION */
+const templateBot = new TemplateBot();
 
 server.post('/api/messages', (req, res) => {
   adapter.processActivity(req, res, async context => {
-    await echoBot.run(context);
+    await templateBot.run(context);
   });
 });
