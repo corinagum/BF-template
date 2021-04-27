@@ -1,0 +1,16 @@
+{
+  "name": "bf-template-root",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:corinagum/BF-template.git",
+  "author": "Corina <14900841+corinagum@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.25.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
+  }
+}
