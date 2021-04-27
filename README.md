@@ -20,7 +20,7 @@ Here's another iteration of a [TypeScript basic bot](https://github.com/microsof
     MICROSOFT_APP_PASSWORD=
     #Optional:
     BOT_NAME=BF-template-bot
-    #PORT=
+    #BOT_PORT=
    ```
 
 1. Update `trustedOrigins.js`
