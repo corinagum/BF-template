@@ -1,10 +1,11 @@
 import { ActivityHandler, MessageFactory, TurnContext } from 'botbuilder';
 
 /*
-* CREATE EchoBot ActivityHandler:
+* CREATE TemplateBot ActivityHandler:
 * - https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/activityhandler?view=botbuilder-ts-latest
+* Note: TemplateBot is a EchoBot; Use this file to jumpstart your custom bot
 */
-export class EchoBot extends ActivityHandler {
+export class TemplateBot extends ActivityHandler {
   constructor() {
     super();
 
@@ -15,6 +16,7 @@ export class EchoBot extends ActivityHandler {
         if (member.id !== context.activity.recipient.id) {
           const localeText = `\nThis activity's locale is ${context.activity.locale || 'not defined'}`;
           const welcomeText = `Welcome, ${member.name}! This is a ${process.env.BOT_NAME}, an echo bot. ${localeText}`;
+
           await context.sendActivity(MessageFactory.text(welcomeText, welcomeText));
         }
       }
