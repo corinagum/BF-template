@@ -4,21 +4,37 @@ import * as path from 'path';
 import * as restify from 'restify';
 import { EchoBot } from './bot';
 
-const ENV_FILE = path.join(__dirname, '../..', '.env');
-config({ path: ENV_FILE });
 
-/* HTTP Server */
+/*
+* CONFIGURE ENV
+* - Add PORT=3978 if not specified in root .env
+* - Next set PUBLIC_URL (proxy bot url) for development mode
+* - process.env = RESOLVED_ENV
+*/
+config();
+const ENV_FILE: any = path.join(__dirname, '../../../', '.env');
+
+const RESOLVED_ENV = {
+  PORT: 3978,
+  ...ENV_FILE
+};
+
+RESOLVED_ENV.PUBLIC_URL = `http://localhost:${ RESOLVED_ENV.PORT }/public`
+process.env = { ...RESOLVED_ENV }
+
+/* HTTP SERVER */
 const server = restify.createServer();
-server.name = process.env.BOT_NAME;
-const botName = server.name;
-server.listen(process.env.port || process.env.PORT || 3978, () => {
+const botName = RESOLVED_ENV.BOT_NAME;
+
+server.name = botName;
+server.listen(RESOLVED_ENV.PORT, () => {
   console.log(`\n ${botName} server listening to ${server.url}`);
 });
 
 /* BotFrameworkAdapter: https://aka.ms/about-bot-adapter */
 const adapter = new BotFrameworkAdapter({
-  appId: process.env.MICROSOFT_APP_ID,
-  appPassword: process.env.MICROSOFT_APP_PASSWORD
+  appId: RESOLVED_ENV.MICROSOFT_APP_ID,
+  appPassword: RESOLVED_ENV.MICROSOFT_APP_PASSWORD
 });
 
 /* Error handling */
