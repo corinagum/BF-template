@@ -16,11 +16,13 @@ Here's another iteration of a [TypeScript basic bot](https://github.com/microsof
 
    You can add and update the following variables:
    ```
+    DIRECT_LINE_SECRET=
     MICROSOFT_APP_ID=
     MICROSOFT_APP_PASSWORD=
     #Optional:
     BOT_NAME=BF-template-bot
     #BOT_PORT=
+    #TOKEN_SERVER_DIRECT_LINE_URL=
    ```
 
 1. Update `trustedOrigins.js`

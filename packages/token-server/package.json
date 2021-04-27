@@ -1,12 +1,18 @@
 {
-  "name": "token-server",
+  "name": "bf-template-token-server",
   "version": "1.0.0",
   "description": "Token Server for BF-template",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "repository": "https://github.com/corinagum/BF-template",
   "author": "corinagum",
   "license": "MIT",
   "dependencies": {
-    "math-random": "^2.0.1"
+    "dotenv": "^8.2.0",
+    "math-random": "^2.0.1",
+    "node-fetch": "^2.6.1",
+    "restify": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1"
   }
 }
