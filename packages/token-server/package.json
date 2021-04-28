@@ -6,6 +6,14 @@
   "repository": "https://github.com/corinagum/BF-template",
   "author": "corinagum",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc --build",
+    "eslint": "eslint src/**/*.ts --fix",
+    "postinstall": "yarn build && node ./deploymentScripts/webConfigPrep.js",
+    "start": "tsc --build && node ./lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon --watch ./src -e ts --exec \"yarn start\""
+  },
   "dependencies": {
     "dotenv": "^8.2.0",
     "math-random": "^2.0.1",

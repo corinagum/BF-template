@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "rootDir": "packages",
+    "skipLibCheck": true,
+    "target": "es2016",
+  }
+}
