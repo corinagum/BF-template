@@ -9,7 +9,7 @@ import { TemplateBot } from './TemplateBot';
  * - Add BOT_PORT=3978 if not specified in root .env
  * - Next set PUBLIC_URL (proxy bot url) for development mode to use designated port
  */
-const ENV_FILE: string = path.join(__dirname, '../../../', '.env');
+const ENV_FILE: string = path.join(__dirname, '..', '.env');
 
 config({ path: ENV_FILE });
 

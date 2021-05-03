@@ -1,7 +1,6 @@
 {
   "name": "bf-template-root",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:corinagum/BF-template.git",
   "author": "Corina <14900841+corinagum@users.noreply.github.com>",
   "license": "MIT",
@@ -9,7 +8,7 @@
     "build": "cd packages/bot && tsc --build || cd packages/token-server && tsc --build",
     "eslint": "eslint packages/**/src/**/*.ts --fix",
     "postinstall": "yarn build && node ./packages/bot/deploymentScripts/webConfigPrep.js",
-    "start": "yarn build && concurrently \"node packages/bot/lib/index.js\" \"node packages/token-server/lib/index.js\"",
+    "start": "lerna run start --parallel",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon --watch ./src -e ts --exec \"yarn start\""
   },
@@ -22,6 +21,7 @@
     "concurrently": "^6.0.2",
     "eslint": "^7.25.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "lerna": "^4.0.0",
     "prettier": "^2.2.1",
     "typescript": "^4.2.4"
   }
