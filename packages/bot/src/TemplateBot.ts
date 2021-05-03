@@ -1,10 +1,10 @@
 import { ActivityHandler, MessageFactory, TurnContext } from 'botbuilder';
 
 /*
-* CREATE TemplateBot ActivityHandler:
-* - https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/activityhandler?view=botbuilder-ts-latest
-* Note: TemplateBot is a EchoBot; Use this file to jumpstart your custom bot
-*/
+ * CREATE TemplateBot ActivityHandler:
+ * - https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/activityhandler?view=botbuilder-ts-latest
+ * Note: TemplateBot is a EchoBot; Use this file to jumpstart your custom bot
+ */
 export class TemplateBot extends ActivityHandler {
   constructor() {
     super();
