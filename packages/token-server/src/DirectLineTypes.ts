@@ -14,6 +14,7 @@ export interface DirectLineTokenResponseJSON {
   conversationId: string;
   error?: string;
   expires_in: string;
+  expires_at?: string;
   text: Promise<string>;
   userId?: string;
 }

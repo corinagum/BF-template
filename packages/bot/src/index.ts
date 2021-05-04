@@ -20,7 +20,7 @@ const { BOT_NAME, BOT_PORT, MICROSOFT_APP_ID, MICROSOFT_APP_PASSWORD } = process
 
 ['MICROSOFT_APP_ID', 'MICROSOFT_APP_PASSWORD'].forEach(name => {
   if (!process.env[name]) {
-    throw new Error(`\ntoken-server: The required environment variable ${name} is undefined`);
+    throw new Error(`\n${BOT_NAME}: The required environment variable ${name} is undefined`);
   }
 });
 
