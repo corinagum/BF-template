@@ -2,6 +2,13 @@ import fetch from 'node-fetch';
 import { DirectLineTokenRequestBody, DirectLineTokenResponseJSON } from '../DirectLineTypes';
 import createUserId from './createUserId';
 
+function calculateExpiresAt(expiresIn: number): Date {
+  const now = Date.now();
+  const expiresAt = new Date(now + expiresIn * 1000);
+
+  return expiresAt;
+}
+
 //TODO: Refactor
 export default async function generateDirectLineToken(): Promise<DirectLineTokenResponseJSON> {
   const { DIRECT_LINE_SECRET, TOKEN_SERVER_DIRECT_LINE_URL } = process.env;
@@ -24,25 +31,21 @@ export default async function generateDirectLineToken(): Promise<DirectLineToken
     },
     method: 'POST'
   };
-  const tokenResponse = await fetch(`${domain}v3/directline/tokens/generate`, httpRequest);
+  const response = await fetch(`${domain}v3/directline/tokens/generate`, httpRequest);
 
-  if (tokenResponse.status !== 200) {
-    console.log(await tokenResponse.text());
+  if (response.status !== 200) {
+    console.log(await response.text());
 
-    throw new Error(`DirectLine service returned ${tokenResponse.status} when generating a new token`);
+    throw new Error(`DirectLine service returned ${response.status} when generating a new token`);
   }
 
-  const json = await tokenResponse.json();
+  const json = await response.json();
 
   if ('error' in json) {
     // rename when adding DL ASE
     throw new Error(`DirectLine service responded with ${JSON.stringify(json.error)} when generating a new token`);
   }
+  const expiresAt = calculateExpiresAt(json.expires_in);
 
-  const tokenResponseJSON: DirectLineTokenResponseJSON = {
-    ...json,
-    userId
-  };
-
-  return tokenResponseJSON;
+  return { ...json, expires_at: expiresAt, userId };
 }

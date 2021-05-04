@@ -1,6 +1,11 @@
 import fetch from 'node-fetch';
 import { DirectLineTokenResponseJSON } from '../DirectLineTypes';
 
+/**
+ * Renews a previously generated (expired or expiring) token via the token service
+ * @param token: token to be renewed
+ * @returns DirectLineTokenResponseJSON: formatted JSON response from the token service
+ */
 export default async function renewDirectLineToken(token: string): Promise<DirectLineTokenResponseJSON> {
   const { TOKEN_SERVER_DIRECT_LINE_URL } = process.env;
   const domain = TOKEN_SERVER_DIRECT_LINE_URL || 'https://directline.botframework.com/';
