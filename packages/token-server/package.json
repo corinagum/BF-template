@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Token Server for BF-template",
   "main": "./lib/index.js",
+  "private": true,
   "repository": "https://github.com/corinagum/BF-template",
   "author": "corinagum",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "restify": "^8.5.1"
   },
   "devDependencies": {
-    "@types/node": "^15.0.1"
+    "@types/node": "^15.0.1",
+    "@types/restify": "^8.5.1"
   }
 }

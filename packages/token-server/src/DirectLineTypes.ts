@@ -12,10 +12,13 @@ export type DirectLineTokenRequestBody = {
 /** https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0#response */
 export interface DirectLineTokenResponseJSON {
   conversationId: string;
-  error?: string;
+  error?: unknown;
   expires_in: string;
+  token: string;
+}
+
+export interface DirectLineTokenData extends DirectLineTokenResponseJSON {
   expires_at?: string;
-  text: Promise<string>;
   userId?: string;
 }
 
