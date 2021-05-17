@@ -1,16 +1,10 @@
 import fetch from 'node-fetch';
-import { DirectLineTokenRequestBody, DirectLineTokenResponseJSON } from '../DirectLineTypes';
+import { DirectLineTokenData, DirectLineTokenRequestBody } from '../DirectLineTypes';
+import calculateExpiresAt from './calculateExpiresAt';
 import createUserId from './createUserId';
 
-function calculateExpiresAt(expiresIn: number): Date {
-  const now = Date.now();
-  const expiresAt = new Date(now + expiresIn * 1000);
-
-  return expiresAt;
-}
-
 //TODO: Refactor
-export default async function generateDirectLineToken(): Promise<DirectLineTokenResponseJSON> {
+export default async function generateServiceToken(): Promise<DirectLineTokenData> {
   const { DIRECT_LINE_SECRET, TOKEN_SERVER_DIRECT_LINE_URL } = process.env;
   const domain = TOKEN_SERVER_DIRECT_LINE_URL || 'https://directline.botframework.com/';
   const userId = createUserId();
@@ -39,7 +33,7 @@ export default async function generateDirectLineToken(): Promise<DirectLineToken
     throw new Error(`DirectLine service returned ${response.status} when generating a new token`);
   }
 
-  const json = await response.json();
+  const json: DirectLineTokenData = await response.json();
 
   if ('error' in json) {
     // rename when adding DL ASE

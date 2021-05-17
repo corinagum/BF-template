@@ -13,12 +13,12 @@ export type DirectLineTokenRequestBody = {
 export interface DirectLineTokenResponseJSON {
   conversationId: string;
   error?: unknown;
-  expires_in: string;
+  expires_in: number;
   token: string;
 }
 
 export interface DirectLineTokenData extends DirectLineTokenResponseJSON {
-  expires_at?: string;
+  expires_at?: number;
   userId?: string;
 }
 
