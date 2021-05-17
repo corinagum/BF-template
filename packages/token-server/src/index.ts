@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import * as path from 'path';
 import * as restify from 'restify';
-import { POSTTokenDL } from './api/directLine/post';
+import POSTTokenDL from './api/directLine/post';
 
 const ENV_FILE: string = path.join(__dirname, '..', '.env');
 config({ path: ENV_FILE });
