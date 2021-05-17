@@ -2,7 +2,10 @@ import { Server } from 'restify';
 import generateServiceToken from '../../utils/generateServiceToken';
 import renewDirectLineToken from '../../utils/renewServiceToken';
 
-export default function POSTTokenDL(server: Server): void {
+/**
+ * Generate a one-off token for 'standard' bot use
+ */
+export default function postDirectLineToken(server: Server): void {
   server.post('/api/token/directline', async (req, res) => {
     try {
       // Need trusted origin handling

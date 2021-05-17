@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import * as path from 'path';
 import * as restify from 'restify';
-import POSTTokenDL from './api/directLine/post';
+import setupAPI from './api/index';
 
 const ENV_FILE: string = path.join(__dirname, '..', '.env');
 config({ path: ENV_FILE });
@@ -22,4 +22,4 @@ server.listen(TOKEN_SERVER_PORT, () => {
   console.log(`\ntoken-server listening to ${TOKEN_SERVER_PORT}`);
 });
 
-POSTTokenDL(server);
+setupAPI(server);

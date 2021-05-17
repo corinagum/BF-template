@@ -16,7 +16,7 @@ import setImmediateAndInterval from '../../utils/setImmediateInterval';
           }
         ]
       }
- *  This is for manual use, not for 'standard' bot use
+ *  This is for manual testing, not for 'standard' bot use
  */
 export default async function getTokenListDirectLine(server: Server): Promise<void> {
   const AUTOGENERATE_TOKEN_INTERVAL = 60000;
