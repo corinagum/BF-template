@@ -1,74 +1,46 @@
 # BF-template
 
-Here's another iteration of a [TypeScript basic bot](https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/) that can be used as a template to get started. This builds on the original sample by providing the following:
+## Project Summary
 
-- Token server setup
-   - Direct Line
-   - Direct Line ASE
-   - Speech Services
-   - Token renewal
-- Trusted origin setup
+This is a template for building a [monorepo](https://en.wikipedia.org/wiki/Monorepo) of resources for Bot Framework bot development and deployment.
+
+This project contains multiple parts. Please see the descriptions below for an understanding of the overall project. Package `README.md` files contain more information pertaining to that particular package.
+
+1. `bot` package:
+   - Provides basic bot setup information
+   - `TemplateBot.ts` is a _basic echo bot_, which iterates on the [BotBuilder TypeScript Samples](https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/)
+     - Provides a jumpstart bot to speed up development
+   - `index.ts` is the basic server setup for running the bot
+1. `bot-offline` package:
+   - Provides browser bot setup information
+   - `createDirectLine` is a _custom Bot Adapter_ that is [hosted in the browser](https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/javascript_es6/01.browser-echo#adapters). This creates a custom `WebChatAdapter` to:
+     - Offload server behavior onto client machine
+     - Reduce latency - very helpful for testing non-production bots
+   - This package can use `TemplateBot.ts` from `bot/` to jumpstart development
+1. `commands` package:
+   - Commands intended for both hosted and browser bots are saved here
+     - This allows for DRY bot production where commands for multiple bots don't need to be written multiple times
+     - `legacy/` contains deprecated code from [BotFramework MockBot](https://github.com/compulim/BotFramework-MockBot), which need to be migrated to `src/`
+     - `src/` contains updated commands for testing bot features
+1. `token-server` package:
+   - Provides token server setup that fetches a token for the bot using the bot secret for better security
+   - Sets up token fetching and renewal for multiple services:
+     - Direct Line
+     - <a href="#notes"><sup>\*</sup></a> Direct Line ASE
+     - <a href="#notes"><sup>\*</sup></a> Cognitive Speech Services
+   - Trusted origin templating for hosted resources
+
+<a name="*note"></a>\* These services have not yet been implemented into the project</a>
+
+### Not sure where to start?
+
+Basic deployment will need the bot and token server, so check those packages first.
 
 ## Setup
 
 1. [Create a repository from this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-1. Create a `.env` file in the root folder
+1. Set up the bot and token server
+   - Developers using this template will most likely want to start with the `bot/` and `token-server/` packages.
+   - See the individual package `README.md` for detailed setup instructions
 
-   You can add and update the following variables:
-   ```
-    DIRECT_LINE_SECRET=
-    MICROSOFT_APP_ID=
-    MICROSOFT_APP_PASSWORD=
-    #Optional:
-    BOT_NAME=BF-template-bot
-    #BOT_PORT=
-    #TOKEN_SERVER_DIRECT_LINE_URL=
-   ```
-
-1. Update `trustedOrigins.js`
-
-1. Install modules in `bot` and `token-server`
-
-    ```bash
-    cd packages/<bot>|<token-server>
-    yarn install
-    ```
-
-1. Start the bot and token server
-
-    ```bash
-    yarn start
-    ```
-
-## Testing the bot using Bot Framework Emulator
-
-[Bot Framework Emulator](https://github.com/microsoft/botframework-emulator) is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.
-
-- Install the Bot Framework Emulator version 4.3.0 or greater from [here](https://github.com/Microsoft/BotFramework-Emulator/releases)
-
-### Connect to the bot using Bot Framework Emulator
-
-- Launch Bot Framework Emulator
-- File -> Open Bot
-- Enter a Bot URL of `http://localhost:3978/api/messages`
-
-## Deploy the bot to Azure
-
-To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
-
-## Further reading
-
-- [GitHub repository templates](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#about-repository-templates)
-
-- [Bot Framework Documentation](https://docs.botframework.com)
-- [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
-- [Activity processing](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-activity-processing?view=azure-bot-service-4.0)
-- [Azure Bot Service Introduction](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0)
-- [Azure Bot Service Documentation](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-- [Azure Portal](https://portal.azure.com)
-- [Language Understanding using LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/)
-- [Channels and Bot Connector Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?view=azure-bot-service-4.0)
-- [TypeScript](https://www.typescriptlang.org)
-- [Restify](https://www.npmjs.com/package/restify)
-- [dotenv](https://www.npmjs.com/package/dotenv)
+---
