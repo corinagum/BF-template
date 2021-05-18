@@ -18,6 +18,7 @@ process.env.BOT_NAME = process.env.BOT_NAME || 'Bot';
 
 const { BOT_NAME, BOT_PORT, MICROSOFT_APP_ID, MICROSOFT_APP_PASSWORD } = process.env;
 
+/* Verifies that all required env variables have been set */
 ['MICROSOFT_APP_ID', 'MICROSOFT_APP_PASSWORD'].forEach(name => {
   if (!process.env[name]) {
     throw new Error(`\n${BOT_NAME}: The required environment variable ${name} is undefined`);
