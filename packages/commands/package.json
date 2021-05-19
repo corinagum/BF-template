@@ -11,8 +11,12 @@
   },
   "scripts": {
     "build": "concurrently \"npm run build:*\"",
+    "build:babel:cjs": "babel --config-file ./babel.cjs.config.json --extensions .js,.ts --out-dir lib/ src/",
+    "build:babel:esm": "babel --config-file ./babel.esm.config.json --extensions .js,.ts --out-dir lib/esm/ src/",
     "build:typescript": "tsc --build src",
     "start": "concurrently \"npm run start:*\"",
+    "start:babel:cjs": "npm run build:babel:cjs -- --watch",
+    "start:babel:esm": "npm run build:babel:esm -- --watch",
     "start:typescript": "npm run build:typescript -- --watch"
   },
   "devDependencies": {
