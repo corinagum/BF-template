@@ -1,4 +1,15 @@
-1. Create `.env` files in the `bot/` and `token-server/` directories
+# Bot Template
+
+This package sets up a template bot server, for the following purposes
+
+- Set up a ready-to-go bot (`TemplateBot`)
+- Easily extend the template bot to your own specifications in a new bot
+- Simple creation, service setup, and deployment
+- Documentation that expands on [BotBuilder Samples](https://github.com/microsoft/BotBuilder-Samples/) and [Bot Framework SDK](https://docs.microsoft.com/bs-cyrl-ba/azure/bot-service/index-bf-sdk?view=azure-bot-service-4.0)
+
+## Getting started
+
+1. Create the `.env` file in `bot/`
 
    Update the following variables (note that optional variables are commented out):
    `bot/.env`:
@@ -11,17 +22,11 @@ MICROSOFT_APP_PASSWORD=
 #BOT_PORT=
 ```
 
-1. Install modules in `bot` and `token-server`
+1. Install modules in `bot` and start the server
 
    ```bash
-   cd packages/<bot>|<token-server>
+   cd packages/<bot>
    yarn install
-   ```
-
-1. Start the bot and token server in separate terminals:
-
-   ```bash
-   cd packages/<bot>|<token-server>
    yarn start
    ```
 
