@@ -1,0 +1,30 @@
+{
+  "name": "bf-template-commands",
+  "version": "0.0.0-0",
+  "main": "./lib/index.js",
+  "author": "corinagum",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corinagum/BF-template"
+  },
+  "scripts": {
+    "build": "concurrently \"npm run build:*\"",
+    "build:typescript": "tsc --build src",
+    "start": "concurrently \"npm run start:*\"",
+    "start:typescript": "npm run build:typescript -- --watch"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-typescript": "^7.13.0",
+    "botbuilder-core": "^4.13.3",
+    "concurrently": "^6.1.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.13.7"
+  }
+}
