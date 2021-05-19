@@ -1,13 +1,12 @@
-
 {
   "compilerOptions": {
     "declaration": true,
     "target": "es2016",
     "module": "commonjs",
-    "outDir": "lib",
+    "outDir": "../lib",
     "rootDir": "src",
     "sourceMap": true,
     "incremental": true,
-    "tsBuildInfoFile": "lib/.tsbuildinfo"
+    "tsBuildInfoFile": "../lib/.tsbuildinfo"
   }
 }
