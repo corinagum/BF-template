@@ -4,7 +4,7 @@ const name = 'Invalid adaptive card';
 
 function help() {
   return {
-    'invalidCard': 'This is an invalid card and should fail to display.'
+    invalidCard: 'This is an invalid card and should fail to display.'
   };
 }
 
@@ -14,11 +14,13 @@ async function processor(context: TurnContext) {
   await context.sendActivity({
     type: 'message',
     attachmentLayout: 'carousel',
-    attachments: [{
+    attachments: [
+      {
         contentType: 'application/vnd.microsoft.card.adaptive',
         content: 5
-    }]
+      }
+    ]
   });
 }
 
-export { help, name, processor }
+export { help, name, processor };

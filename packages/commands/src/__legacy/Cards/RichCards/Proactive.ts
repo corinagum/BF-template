@@ -10,7 +10,7 @@ function help() {
   };
 }
 
-async function processor(context: TurnContext, args: string = '') {
+async function processor(context: TurnContext, args = '') {
   const reference = TurnContext.getConversationReference(context.activity);
 
   await context.sendActivity({

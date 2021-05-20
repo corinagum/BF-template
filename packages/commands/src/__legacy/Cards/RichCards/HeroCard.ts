@@ -8,7 +8,7 @@ function help() {
   return {
     herocard: 'Show a hero card',
     'herocard long title': 'Show a hero card with a long title',
-    'herocard qna': 'Show two hero cards with two sets of questions and answers',
+    'herocard qna': 'Show two hero cards with two sets of questions and answers'
   };
 }
 
