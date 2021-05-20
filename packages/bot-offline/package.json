@@ -1,14 +1,19 @@
 {
   "name": "bot-offline",
   "version": "0.0.0-0",
-  "description": "template for browser bot",
+  "description": "Bot Framework Browser (Offline) Template",
   "main": "lib/index.js",
+  "typings": "lib/DirectLineTypes.d.ts",
   "author": "corinagum",
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/corinagum/BF-template"
+  },
+  "scripts": {
+    "build": "tsc --build src",
+    "start": "yarn run build -- --watch"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.3",
@@ -21,6 +26,7 @@
   },
   "dependencies": {
     "botbuilder-core": "^4.13.3",
-    "core-js": "^3.12.1"
+    "core-js": "^3.12.1",
+    "math-random": "^2.0.1"
   }
 }
