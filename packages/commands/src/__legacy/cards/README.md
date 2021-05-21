@@ -2,7 +2,7 @@
 
 This directory contains various sample cards to be used for testing, transfered from Bot Framework MockBot.
 
-## NOTE: New card should **NOT** be added to the `Cards/` directory.
+## NOTE: New card should **NOT** be added to the `__/legacy/cards/` directory.
 
 [Cards documentation](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-add-rich-cards?view=azure-bot-service-4.0)
 

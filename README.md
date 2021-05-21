@@ -13,7 +13,7 @@ This project contains multiple parts. Please see the descriptions below for an u
    - `index.ts` is the basic server setup for running the bot
 1. `bot-offline` package:
    - Provides browser bot setup information
-   - `createDirectLine` is a _custom Bot Adapter_ that is [hosted in the browser](https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/javascript_es6/01.browser-echo#adapters). This creates a custom `WebChatAdapter` to:
+   - `createDirectLine.js` is a _custom Bot Adapter_ that is [hosted in the browser](https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/javascript_es6/01.browser-echo#adapters). This creates a custom `WebChatAdapter` to:
      - Offload server behavior onto client machine
      - Reduce latency - very helpful for testing non-production bots
    - This package can use `TemplateBot.ts` from `bot/` to jumpstart development
@@ -25,8 +25,8 @@ This project contains multiple parts. Please see the descriptions below for an u
 1. `token-server` package:
    - Provides token server setup that fetches a token for the bot using the bot secret for better security
    - Sets up token fetching and renewal for multiple services:
-     - Direct Line
-     - <a href="#notes"><sup>\*</sup></a> Direct Line ASE
+     - DirectLine
+     - <a href="#notes"><sup>\*</sup></a> DirectLine ASE
      - <a href="#notes"><sup>\*</sup></a> Cognitive Speech Services
    - Trusted origin templating for hosted resources
 
