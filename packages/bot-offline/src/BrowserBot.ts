@@ -1,14 +1,24 @@
-import { ActivityHandler, ActivityTypes, MessageFactory, TurnContext } from 'botbuilder';
+import {
+  ActivityHandler,
+  ActivityTypes,
+  ConversationState,
+  MessageFactory,
+  TurnContext,
+  UserState
+} from 'botbuilder-core';
 
-/*
- * CREATE TemplateBot ActivityHandler:
- * - https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/activityhandler?view=botbuilder-ts-latest
- * Note: TemplateBot is a EchoBot; Use this file to jumpstart your custom bot
- */
-export class TemplateBot extends ActivityHandler {
-  constructor() {
+export class BrowserBot extends ActivityHandler {
+  /**
+   * BotState: https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-state?view=azure-bot-service-4.0
+   */
+  conversationState;
+  userState;
+
+  constructor(conversationState: ConversationState, userState: UserState) {
     super();
 
+    this.conversationState = conversationState;
+    this.userState = userState;
     this.onMembersAdded(async (context: TurnContext, next) => {
       const membersAdded = context.activity.membersAdded;
 
