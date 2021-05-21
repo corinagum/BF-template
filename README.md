@@ -25,8 +25,8 @@ This project contains multiple parts. Please see the descriptions below for an u
 1. `token-server` package:
    - Provides token server setup that fetches a token for the bot using the bot secret for better security
    - Sets up token fetching and renewal for multiple services:
-     - DirectLine
-     - <a href="#notes"><sup>\*</sup></a> DirectLine ASE
+     - Direct Line
+     - <a href="#notes"><sup>\*</sup></a> Direct Line ASE
      - <a href="#notes"><sup>\*</sup></a> Cognitive Speech Services
    - Trusted origin templating for hosted resources
 
