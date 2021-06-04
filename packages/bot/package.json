@@ -12,20 +12,21 @@
   },
   "scripts": {
     "build": "tsc --build src",
-    "postinstall": "yarn build && node ./deploymentScripts/webConfigPrep.js",
     "start": "tsc --build && node ./lib/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon --watch ./src -e ts --exec \"yarn start\""
+    "watch": "nodemon --watch ./src -e ts --exec \"npm start\""
   },
   "dependencies": {
-    "@types/dotenv": "^8.2.0",
-    "@types/restify": "^8.5.1",
-    "botbuilder": "^4.13.0",
+    "botbuilder": "^4.13.3",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7",
     "replace": "^1.2.1",
     "restify": "^8.5.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^15.12.1",
+    "@types/restify": "^8.5.1"
+  }
 }
