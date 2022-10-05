@@ -17,7 +17,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "math-random": "^2.0.1",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.2.10",
     "restify": "^8.5.1"
   },
   "devDependencies": {
