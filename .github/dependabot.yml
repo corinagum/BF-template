@@ -9,19 +9,28 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "monday"
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/packages/token-server"
     schedule:
       interval: "weekly"
+      day: "tuesday"
+      time: "09:00"
   - package-ecosystem: "npm"
     directory: "/packages/commands"
     schedule:
       interval: "weekly"
+      day: "wednesday"
+      time: "09:00"
   - package-ecosystem: "npm"
     directory: "/packages/bot"
     schedule:
       interval: "weekly"
+      day: "thursday"
+      time: "09:00"
   - package-ecosystem: "npm"
     directory: "/packages/bot-offline"
     schedule:
       interval: "weekly"
+      day: "thursday"
+      time: "09:00"
