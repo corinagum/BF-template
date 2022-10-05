@@ -19,7 +19,7 @@
   "dependencies": {
     "botbuilder": "^4.13.3",
     "dotenv": "^16.0.3",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.2.10",
     "nodemon": "^2.0.7",
     "replace": "^1.2.1",
     "restify": "^8.5.1"
