@@ -10,5 +10,5 @@ updates:
     schedule:
       interval: "weekly"
       day: "monday"
-# Updates both the package-lock and package.json, not just package-lock
-versioning-strategy: increase
+    # Updates both the package-lock and package.json, not just package-lock
+    versioning-strategy: increase
