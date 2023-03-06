@@ -26,7 +26,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "botbuilder-core": "^4.19.2",
     "concurrently": "^7.5.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.9.5"
   },
   "dependencies": {
     "regenerator-runtime": "^0.13.7"
