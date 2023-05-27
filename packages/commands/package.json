@@ -20,7 +20,7 @@
     "start:typescript": "npm run build:typescript -- --watch"
   },
   "devDependencies": {
-    "@babel/cli": "^7.20.7",
+    "@babel/cli": "^7.21.5",
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.19.4",
     "@babel/preset-typescript": "^7.13.0",
