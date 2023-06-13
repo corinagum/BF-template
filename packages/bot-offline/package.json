@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "botbuilder-core": "^4.19.2",
-    "core-js": "^3.27.1",
+    "core-js": "^3.31.0",
     "math-random": "^2.0.1"
   }
 }
