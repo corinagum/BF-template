@@ -15,7 +15,7 @@
     "watch": "nodemon --watch ./src -e ts --exec \"npm start\""
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.3.1",
     "math-random": "^2.0.1",
     "node-fetch": "^3.3.0",
     "restify": "^11.1.0"
