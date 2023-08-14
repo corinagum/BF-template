@@ -24,7 +24,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "concurrently": "^8.2.0",
     "esbuild": "^0.18.13",
-    "serve": "^14.1.2"
+    "serve": "^14.2.0"
   },
   "dependencies": {
     "botbuilder-core": "^4.20.0",
