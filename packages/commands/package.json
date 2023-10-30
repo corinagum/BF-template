@@ -24,7 +24,7 @@
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-typescript": "^7.23.2",
-    "botbuilder-core": "^4.20.1",
+    "botbuilder-core": "^4.21.0",
     "concurrently": "^8.2.1",
     "typescript": "^5.2.2"
   },
