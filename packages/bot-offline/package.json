@@ -27,7 +27,7 @@
     "serve": "^14.2.1"
   },
   "dependencies": {
-    "botbuilder-core": "^4.20.1",
+    "botbuilder-core": "^4.21.1",
     "core-js": "^3.33.0",
     "math-random": "^2.0.1"
   }
