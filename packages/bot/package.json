@@ -17,7 +17,7 @@
     "watch": "nodemon --watch ./src -e ts --exec \"npm start\""
   },
   "dependencies": {
-    "botbuilder": "^4.20.1",
+    "botbuilder": "^4.21.1",
     "dotenv": "^16.3.1",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.0.1",
