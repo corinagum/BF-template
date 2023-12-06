@@ -23,7 +23,7 @@
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.5",
-    "@babel/preset-typescript": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.3",
     "botbuilder-core": "^4.21.1",
     "concurrently": "^8.2.2",
     "typescript": "^5.2.2"

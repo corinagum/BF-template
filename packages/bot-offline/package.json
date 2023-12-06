@@ -21,7 +21,7 @@
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.5",
-    "@babel/preset-typescript": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.3",
     "concurrently": "^8.2.2",
     "esbuild": "^0.19.8",
     "serve": "^14.2.1"
