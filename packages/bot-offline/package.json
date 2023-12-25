@@ -23,7 +23,7 @@
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-typescript": "^7.23.3",
     "concurrently": "^8.2.2",
-    "esbuild": "^0.19.8",
+    "esbuild": "^0.19.10",
     "serve": "^14.2.1"
   },
   "dependencies": {
